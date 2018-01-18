@@ -1,13 +1,4 @@
-#-------------------------------------------------------------------------------
-# Name:        module1
-# Purpose:
-#
-# Author:      chris
-#
-# Created:     16-01-2018
-# Copyright:   (c) chris 2018
-# Licence:     <your licence>
-#-------------------------------------------------------------------------------
+
 import arcpy
 from arcpy import Describe
 from arcpy import env
