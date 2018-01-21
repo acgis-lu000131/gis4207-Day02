@@ -12,15 +12,15 @@ if len(argv) != 2:
 
 else:
     importarcpy()
-    path_to_folder= r"..\..\..\Data\Canada"
     folder= argv[1]
-    arcpy.env.workspace= path_to_folder+folder
-
+    arcpy.env.workspace= folder
+    print arcpy.env.workspace
 
     if arcpy.Exists(folder)==True:
-        workspaces=arcpy.ListWorkspaces()
-        print workspaces
+        for workspaces in arcpy.ListWorkspaces('','all'):
+            print workspaces
+
 
     else:
-        print "workspace does not exist."
+        print "Sorry, workspace does not exist."
 
