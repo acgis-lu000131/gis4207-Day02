@@ -8,18 +8,19 @@ def importarcpy():
         from arcpy import env
 
 if len(argv) != 2:
-    print "Usage: List02.py <FeatureClassName>"
+    print "Usage: List04.py <RootFolder>"
 
 else:
     importarcpy()
-    working_folder= argv[0]
-    path_to_folder= r"..\..\..\Data"
+    path_to_folder= r"..\..\..\Data\Canada"
     folder= argv[1]
     arcpy.env.workspace= path_to_folder+folder
-    fclist=arcpy.ListFeatureClasses()
 
-    if arcpy.Exists(working_folder)==True:
-        for fc in fclist:
-            print fc
+
+    if arcpy.Exists(folder)==True:
+        workspaces=arcpy.ListWorkspaces()
+        print workspaces
+
     else:
-        print working_folder+" does not exist."
+        print "workspace does not exist."
+

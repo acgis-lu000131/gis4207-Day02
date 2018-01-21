@@ -4,7 +4,7 @@ from arcpy import env
 from sys import argv
 
 if len(argv) != 2:
-    print "Describe03.py <FeatureClassName>"
+    print "Usage: Describe03.py <FeatureClassName>"
 
 else:
     working_folder= argv[0]

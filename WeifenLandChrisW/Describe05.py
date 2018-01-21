@@ -8,15 +8,15 @@ def importarcpy():
         from arcpy import env
 
 if len(argv) != 2:
-    print "Describe05.py <FeatureClassName>"
+    print "Usage: Describe05.py <FeatureClassName>"
 
 else:
     importarcpy()
     working_folder= argv[0]
-    env.workspace=  r"..\..\..\Data\Canada"
+    arcpy.env.workspace=  r"..\..\..\Data\Canada"
     working_file=argv[1]
     if arcpy.Exists(working_file):
-        description=Describe(working_file)
+        description=arcpy.Describe(working_file)
     else:
         print working_file +" does not exist."
 

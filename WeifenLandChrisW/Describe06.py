@@ -8,7 +8,7 @@ def importarcpy():
         from arcpy import env
 
 if len(argv) != 2:
-    print "Describe06.py <FeatureClassName>"
+    print "Usage: Describe06.py <FeatureClassName>"
 
 else:
     importarcpy()

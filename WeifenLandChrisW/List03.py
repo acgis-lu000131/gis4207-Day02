@@ -8,7 +8,7 @@ def importarcpy():
         from arcpy import env
 
 if len(argv) != 3:
-    print "List03.py <FeatureClassName> <FeatureType>"
+    print "Usage: List03.py <FeatureClassName> <FeatureType>"
 
 else:
     importarcpy()
