@@ -1,13 +1,17 @@
 import arcpy
 from arcpy import Describe
 from arcpy import env
-import os
+from sys import argv
 
+if len(argv) != 2:
+    print "Usage: Describe03.py <FeatureClassName>"
 
-working_folder= os.path.dirname(__file__)
-os.chdir(working_folder)
-env.workspace=  r"..\..\..\Data\SanFrancisco"
-fcList= arcpy.ListFeatureClasses()
+else:
+    working_folder= argv[0]
+    env.workspace=  r"..\..\..\Data\Canada"
+    working_file= argv[1]
+    description=Describe(working_file)
 
-for fc in fcList:
-    print fc
+    print "{:13}: {}".format("BaseName: ", description.BaseName)
+    print "{:13}: {}".format("CatalogPath: ",description.CatalogPath)
+    print "{:13}: {}".format("DataType: ", description.DataType)
