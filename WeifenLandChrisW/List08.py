@@ -17,6 +17,7 @@ else:
     if path.exists(rootfolder):
         importarcpy()
         outfile=open(argv[2],'w')
+        arcpy.env.workspace=argv[1]
         for root,dirs,files in os.walk(rootfolder):
             for r in dirs:
                for w in arcpy.ListWorkspaces():
